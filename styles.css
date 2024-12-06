@@ -1,0 +1,244 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* End of Reset */
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  background-color: hsl(210, 46%, 95%);
+  margin: 0;
+}
+p,
+h1 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.7359154929577465rem + 1.1267605633802817vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  color: #48556a;
+}
+
+h2,
+p {
+  font-size: 0.81rem;
+}
+p {
+  color: #6e8098;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  max-width: 49.63rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+/* Card Styles */
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  border-radius: 15px;
+  gap: 0.5rem;
+}
+
+.card-image img {
+  border-radius: 15px 0 0 15px;
+  height: 100%;
+}
+
+.card-content {
+  padding: 2rem;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bg-color {
+  background-color: #48556a;
+}
+
+.footer-info {
+  width: 70%;
+}
+
+.card-footer-image img {
+  max-width: 2.5rem;
+  border-radius: 50%;
+}
+
+.card-share-icon {
+  display: flex;
+  background-color: #ecf2f8;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-active-icons {
+  display: flex;
+  background-color: #48556a;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-active-icons p {
+  text-transform: uppercase;
+  letter-spacing: 0.31rem;
+}
+
+svg {
+  color: #6e8098;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer-share-icons {
+  display: flex;
+  position: absolute;
+  background-color: #48556a;
+  padding: 1rem 3.2rem;
+  border-radius: 15px;
+  gap: 1rem;
+  top: -70px;
+  right: -107px;
+}
+
+.arrow-down {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #48556a;
+  top: -50%;
+  left: 89%;
+}
+@media (max-width: 700px) {
+  .card {
+    grid-template-columns: 1fr;
+    max-width: 20.44rem;
+  }
+
+  .card-share-icon {
+    order: 2;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+
+  .card-info {
+    padding: 2rem;
+  }
+
+  .card-image img {
+    border-radius: 15px 15px 0 0;
+  }
+  .card-footer {
+    border-radius: 0 0 15px 15px;
+    padding: 1rem 2rem;
+    margin-top: 0;
+    justify-content: space-evenly;
+  }
+}
